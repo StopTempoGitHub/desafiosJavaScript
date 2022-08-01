@@ -15,10 +15,43 @@ function multiplicacion() {
     return valorFotos = 10 * cantFotos
 }
 
+//Definimos la estructura de mis objetos
+class productos {
+    constructor(nombre, precio, descripcion){
+        this.nombre = nombre;
+        this.precio = precio;
+        this.descripcion = descripcion;
+    }
+};
+//Creo mis objetos
+let prod1 = new productos("Nadador", 10, "Un pechista en plena respiracion.");
+let prod2 = new productos("Chef", 10, "Un chef presentando su plato.");
+let prod3 = new productos("Viajero", 10, "Un hombre esperando su vuelo en pandemia.");
+let prod4 = new productos("Servicios", 200, "Sesión fotográfica para productos o modelos.");
+
+//Creo mi array y pusheo los objetos
+let listProductos = [];
+listProductos.push(prod1);
+listProductos.push(prod2);
+listProductos.push(prod3);
+listProductos.push(prod4);
+
+//Función para llamar a cada uno de los elementos del array como un lista.
+function saludar (){
+    alert ("Nuestros productos son: \n");
+    for (i=0; i<4; i++){
+        alert (JSON.stringify(listProductos[i].nombre) + 
+        "\n Valor: " + JSON.stringify(listProductos[i].precio) + " USD \n" +
+        JSON.stringify(listProductos[i].descripcion)
+        );
+    };
+}
+
 //Condición de compra
 switch (confirmCompra){
     //VAMOS A COMPRAR
     case true:
+        saludar(); //Llamada a la funcion
         //Contratamos los servicios?
         let confirmServicio = confirm ("¿Te gustaría contratar nuestro servicio fotográfico?"); 
             switch (confirmServicio){
@@ -34,9 +67,8 @@ switch (confirmCompra){
         let confirmProd = confirm ("¿Querés comprar alguna foto?");
             switch (confirmProd){
                 case true:
-                    alert ("Podes comprar hasta 15 imágenes para tu escritorio");
-                    alert ("Cada imagen tiene un costo de 10 USD");
-                    cantFotos = prompt("Ingresa un valor del 1 al 15");
+                    alert ("Podes comprar hasta 3 imágenes para tu escritorio");
+                    cantFotos = parseInt(prompt("Ingresa un valor del 1 al 3"));
                     alert ("El valor por " + cantFotos + " fotos es: " + multiplicacion() + " USD");
                     break;
                 case false:
@@ -52,7 +84,3 @@ switch (confirmCompra){
         alert ("Disfruta del contenido de la página. ¡Estamos a tu disposición cuando lo desees!");
         break;
 }
-
-/*COMENTARIOS A TUTORÍA*/
-// Para esta entrega intenté hacer el cálculo de lo que podría llegar a ser una carrito de compra... Imagino que es super básico, pero tampoco tengo todavía muy ideado que es lo que voy a vender ni tampoco tenía pensado poner un carro de compra. Pero podría ser útil en mi página web. Podes verla ingresando a: www.stoptempo.com.ar
-// Por ahora la sección de contacto no funciona; por ende acá va mi consulta: ¿Con lo que veamos en JS podría hacer que funcione? ¿O en realidad para hacer funcionar un formulario de contacto necesito ver otras propiedades de cursos mas adelantados?
