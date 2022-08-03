@@ -1,6 +1,3 @@
-alert ("Bienvenido a la sección de compras de StopTempo")
-let confirmCompra = confirm ("¿Te gustaría comprar alguno de nuestros servicios o productos?")
-
 let service = parseInt(0);
 let valorFotos = parseInt(0);
 
@@ -15,14 +12,6 @@ function multiplicacion() {
     return valorFotos = 10 * cantFotos
 }
 
-//Definimos la estructura de mis objetos
-class productos {
-    constructor(nombre, precio, descripcion){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.descripcion = descripcion;
-    }
-};
 //Creo mis objetos
 let prod1 = new productos("Nadador", 10, "Un pechista en plena respiracion.");
 let prod2 = new productos("Chef", 10, "Un chef presentando su plato.");
@@ -39,13 +28,16 @@ listProductos.push(prod4);
 //Función para llamar a cada uno de los elementos del array como un lista.
 function saludar (){
     alert ("Nuestros productos son: \n");
-    for (i=0; i<4; i++){
+    for (i=0; i<listProductos.length; i++){
         alert (JSON.stringify(listProductos[i].nombre) + 
         "\n Valor: " + JSON.stringify(listProductos[i].precio) + " USD \n" +
         JSON.stringify(listProductos[i].descripcion)
         );
     };
 }
+
+alert ("Bienvenido a la sección de compras de StopTempo")
+let confirmCompra = confirm ("¿Te gustaría comprar alguno de nuestros servicios o productos?")
 
 //Condición de compra
 switch (confirmCompra){
@@ -68,7 +60,7 @@ switch (confirmCompra){
             switch (confirmProd){
                 case true:
                     alert ("Podes comprar hasta 3 imágenes para tu escritorio");
-                    cantFotos = parseInt(prompt("Ingresa un valor del 1 al 3"));
+                    cantFotos = parseInt(prompt("Ingresa un valor del 1 al 3").trim());
                     alert ("El valor por " + cantFotos + " fotos es: " + multiplicacion() + " USD");
                     break;
                 case false:
@@ -84,3 +76,6 @@ switch (confirmCompra){
         alert ("Disfruta del contenido de la página. ¡Estamos a tu disposición cuando lo desees!");
         break;
 }
+
+
+//Este es el código del que partieron las anteriores entregas. Se trabaja solo con variables. El uso de arrays no esta ligado al código. No se encuentra modo de realizar sumas con elementos selecciones específicamente del array.
