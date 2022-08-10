@@ -36,7 +36,7 @@ listObjs.push(obj4);
     //Lista con todos los productos (unidos mediante el método concat)
 let listTodo = listCams.concat(listObjs);
 
-
+/*
 //LÓGICA Y VISIBILIDAD DE LA PÁGINA
 let nombreUs = prompt("Ingresa tu nombre");
 alert ("¡Bienvenido a StopTempo, " + nombreUs + "! \nEn esta sección podrás comprar cámaras y objetivos Nikon."); 
@@ -84,6 +84,7 @@ switch (confirmCompra){
         alert ("Disfruta del contenido de la página. ¡Estamos a tu disposición cuando lo desees!");
         break;
 }
+*/
 
 //FUNCIONES
     //Función que muestra cada uno de los elementos de los array.
@@ -149,4 +150,53 @@ function mostrar_arreglo(){
         mensaje += "\n " + produc.mostrar_descripcion();
     })
     alert(mensaje);    
+}
+
+
+//EVENTOS
+    //Mostrar Cámaras
+let cajitaCams = document.querySelectorAll(".cajitaCams");
+let camTitulo = document.querySelector(".camTitulo");
+
+camTitulo.addEventListener('click', ()=>{
+    for(i=0; i<cajitaCams.length; i++){
+        llamarCams()
+    }
+});
+function llamarCams (){
+    cajitaCams[i].classList.toggle ("mostrarElementos");
+}
+    //Mostrar Objetivos
+let cajitaObjs = document.querySelectorAll(".cajitaObjs");
+let objTitulo = document.querySelector(".objTitulo");
+
+objTitulo.addEventListener('click', ()=>{
+    for(i=0; i<cajitaObjs.length; i++){
+        llamarObjs()
+    }
+});
+function llamarObjs(){
+    cajitaObjs[i].classList.toggle ("mostrarElementos");
+}   
+
+    //Iluminar elementos
+for (const caja of cajitaCams) {
+    caja.addEventListener('mouseover', ()=>{
+        caja.style.backgroundColor = "violet";
+    })
+}
+for (const caja of cajitaCams) {
+    caja.addEventListener('mouseout', ()=>{
+        caja.style.backgroundColor = "white";
+    })
+}
+for (const caja of cajitaObjs) {
+    caja.addEventListener('mouseover', ()=>{
+        caja.style.backgroundColor = "violet";
+    })
+}
+for (const caja of cajitaObjs) {
+    caja.addEventListener('mouseout', ()=>{
+        caja.style.backgroundColor = "white";
+    })
 }

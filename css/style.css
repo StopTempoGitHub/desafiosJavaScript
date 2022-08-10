@@ -8,7 +8,7 @@
     text-align: center;
     padding-top: 60px;
     height: 100vh;
-    background: linear-gradient(rgb(0, 255, 234), rgb(0, 0, 0));
+    /*background: linear-gradient(rgb(0, 255, 234), rgb(0, 0, 0));*/
 }
 .h1 {
     font-size: 48px;
@@ -16,3 +16,35 @@
 .p {
     font-size: 24px;
 }
+
+/* Creamos los contenedores para las cámaras */
+.contenedor {
+    border: inset rgb(116, 19, 116) 10px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    justify-items: center;
+}
+.camTitulo, .objTitulo {
+    grid-column: 2 / span 2;
+    margin-bottom: 20px;
+    cursor: pointer
+}
+.cajitaCams, .cajitaObjs {
+    display: none;
+}
+.mostrarElementos{
+    display: block;
+    grid-row: 2;
+    border:  rgb(116, 19, 116) 5px inset;
+    height: auto;
+    width: 350px;
+    margin-bottom: 20px;
+}
+.img {
+    width: 50%;
+}
+
