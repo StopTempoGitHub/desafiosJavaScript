@@ -1,9 +1,10 @@
 //Definimos la estructura de mis objetos
 class productos {
-    constructor(nombre, precio, descripcion){
+    constructor(nombre, precio, descripcion, imagen){
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
+        this.imagen = imagen;
         this.id = 1;
     }
     

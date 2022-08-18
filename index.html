@@ -5,67 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Interactuar con HTML</title>
 </head>
 
 <body class="body">
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <picture class="logo">
+            <img src="./assets/multimedia/imagenes/logos/logoStopTempo.png" alt="Logo de la marca">
+        </picture>
+        <!-- carrito -->
+        <div class="nav-carrito">
+            <input type="checkbox"  id="check">
+            <label for="check" class="checkbtn">
+                <i class="carrito"><img src="./assets/multimedia/imagenes/iconos/carritoDeCompras.png" alt="Carrito de Compras"></i>
+            </label>
+            <div class="contenedorDelCarrito">
+                <h3>Carrito de Compra</h3>
+            </div class="contenedorDelCarrito">
+        </div>
+        <!-- FIN carrito -->
+    </header>
+
+    <!-- CUERPO -->
     <main class="main">
-        <h1 class="titulo">Desafío 6. Incorporar Eventos</h1>
-        <p class="parrafo">Suma al proyecto lo trabajado con DOM para interactuar entre HTML y JS.</p>
-        <p class="parrafo">Consigna:
-            <br><span class="br">- Asocia eventos a los elementos del html.
-        </p>
+        <picture class="fondoCuerpo">
+            <img src="./assets/multimedia/imagenes/otros/fondoLente.jpg" alt="Imagen de un lente">
+        </picture>
+        <h1 class="titulo">Productos StopTempo</h1>
+        <p class="parrafo">¡Compra al mejor precio!</p>
         <div class="contenedor">
             <h2 class="camTitulo">Cámaras</h2>
-            <div class="cajitaCams">
-                <img class="img" src="./imagenes/camaras/d3500.png" alt="d3500">
-                <h3 class="modelo">Nikon D3500</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
-            </div>
-            <div class="cajitaCams">
-                <img class="img" src="./imagenes/camaras/d7500.png" alt="d3500">
-                <h3 class="modelo">Nikon D7500</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
-            </div>
-            <div class="cajitaCams">
-                <img class="img" src="./imagenes/camaras/d780.png" alt="d780">
-                <h3 class="modelo">Nikon D780</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
-            </div>
-            <div class="cajitaCams">
-                <img class="img" src="./imagenes/camaras/d850.png" alt="d850">
-                <h3 class="modelo">Nikon D850</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
+            <div class="contenedorCajitasCam">
+                <!--Acá se agregan elementos del JS-->
+                <!-- <div class="cajitaCams">
+                    <img class="img" src="./assets/multimedia/imagenes/camaras/d3500.png" alt="d3500">
+                    <h3 class="modelo">Nikon D3500</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div>
+                <div class="cajitaCams">
+                    <img class="img" src="./assets/multimedia/imagenes/camaras/d7500.png" alt="d3500">
+                    <h3 class="modelo">Nikon D7500</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div>
+                <div class="cajitaCams">
+                    <img class="img" src="./assets/multimedia/imagenes/camaras/d780.png" alt="d780">
+                    <h3 class="modelo">Nikon D780</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div>
+                <div class="cajitaCams">
+                    <img class="img" src="./assets/multimedia/imagenes/camaras/d850.png" alt="d850">
+                    <h3 class="modelo">Nikon D850</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div> -->
             </div>
         </div>
         <div class="contenedor">
             <h2 class="objTitulo">Objetivos</h2>
-            <div class="cajitaObjs">
-                <img class="img" src="./imagenes/objetivos/afNikkor50.png" alt="Af Nikkor 50mm">
-                <h3 class="modelo">Nikkor 50mm</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
-            </div>
-            <div class="cajitaObjs">
-                <img class="img" src="./imagenes/objetivos/afNikkor2485.png" alt="Af Nikkor 24-85mm">
-                <h3 class="modelo">Af Nikkor 24-85mm</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
-            </div>
-            <div class="cajitaObjs">
-                <img class="img" src="./imagenes/objetivos/afNikkor85.png" alt="Af Nikkor 85mm">
-                <h3 class="modelo">Nikkor 85mm</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
-            </div>
-            <div class="cajitaObjs">
-                <img class="img" src="./imagenes/objetivos/afNikkor70200.png" alt="Af Nikkor 70-200mm">
-                <h3 class="modelo">Af Nikkor 70-200mm</h3>
-                <p class="descripcionCam">Descripcion de la camara</p>
+            <div class="contenedorCajitasObj">
+                <!--Acá se agregan elementos del JS-->
+                <!-- <div class="cajitaObjs">
+                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor50.png" alt="Af Nikkor 50mm">
+                    <h3 class="modelo">Nikkor 50mm</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div>
+                <div class="cajitaObjs">
+                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor2485.png" alt="Af Nikkor 24-85mm">
+                    <h3 class="modelo">Af Nikkor 24-85mm</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div>
+                <div class="cajitaObjs">
+                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor85.png" alt="Af Nikkor 85mm">
+                    <h3 class="modelo">Nikkor 85mm</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div>
+                <div class="cajitaObjs">
+                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor70200.png" alt="Af Nikkor 70-200mm">
+                    <h3 class="modelo">Af Nikkor 70-200mm</h3>
+                    <p class="descripcionCam">Descripcion de la camara</p>
+                </div> -->
             </div>
         </div>
     </main>
+
+    <!-- PIE -->
+    <footer class="pie">
+        <div class="licencia">
+            <div class="textCreativeCommons">
+                <br/>Esta página de <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Gette Fernando</span> está bajo una 
+                <a class="linkCreativeCommons" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons     Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
+            </div>
+        </div>
+    </footer>
     <!-- JavaScript -->
-    <script src="./js/clases/objetos.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./assets/js/clases/objetos.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
