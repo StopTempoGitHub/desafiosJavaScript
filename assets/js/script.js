@@ -36,6 +36,7 @@ listObjs.push(obj4);
 let listTodo = listCams.concat(listObjs);
 
 
+
 /* ETIQUETAS DEL HTML */
 let contenedorCajitasCam = document.querySelectorAll(".contenedorCajitasCam");
 let camTitulo = document.querySelector(".camTitulo");
@@ -56,7 +57,7 @@ function crearCam (producto){
                                 <h3 class="modelo">${producto.nombre}</h3>
                                 <p class="descripcionCam">${producto.descripcion.substring(0,200)}</p>
                                 <p class="precio">$${producto.precio}</p>
-                                <a href="javascript:addCarrito(id)" class="btnComprar">Comprar</a>
+                                <a href="javascript:addCarrito(${producto.id})" class="btnComprar">Comprar</a>
                             `;
         elemento.appendChild(cajitaCams)
     });
@@ -75,15 +76,25 @@ function crearObj (producto){
                                 <h3 class="modelo">${producto.nombre}</h3>
                                 <p class="descripcionCam">${producto.descripcion.substring(0,200)}</p>
                                 <p class="precio">$${producto.precio}</p>
-                                <a href="javascript:addCarrito(id)" class="btnComprar">Comprar</a>
+                                <a href="javascript:addCarrito(${producto.id})" class="btnComprar">Comprar</a>
                             `;
         elemento.appendChild(cajitaObjs)
+
+
     });
 };
 listObjs.forEach((producto) => {
     crearObj(producto);
 });
 
+/* PRODUCTOS EN EL CARRITO */
+let arrayCarrito = [];
+
+const agregarAlCarrito = (prodId) => {
+    const item = listTodo.find((prod) => prod.id === prodId);
+    arrayCarrito.push(item);
+    console.log(arrayCarrito);
+}
 
 /* EVENTOS */
     //Mostrar Cámaras
@@ -107,6 +118,9 @@ function llamarObjs(){
 }   
 
 /* AGREGAR PRODUCTOS AL CARRITO */
-carrito.addEventListener('click', ()=>{
-    document.carrito.style.backgroundColor = "red";
-});
+let addCar = document.getElementById('addCar');
+
+function addCarrito(){
+    alert("hagamos esto")
+}
+

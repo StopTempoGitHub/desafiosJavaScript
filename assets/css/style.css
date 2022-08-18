@@ -30,7 +30,7 @@
             top: 205px;
             left: -100%;
             width: 80%;
-            height: 80%;
+            height: fit-content;
             right: 0; 
             /* Degradado */
             background: rgb(203,65,164);
@@ -38,7 +38,12 @@
             background: -webkit-linear-gradient(342deg, rgba(203,65,164,1) 0%, rgba(169,118,197,1) 47%, rgba(118,153,229,1) 100%);
             background: linear-gradient(342deg, rgba(203,65,164,1) 0%, rgba(169,118,197,1) 47%, rgba(118,153,229,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cb41a4",endColorstr="#7699e5",GradientType=1);
-            /* Fin degradado */ 
+            /* Fin degradado */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
         }
         .checkbtn{
             display: block;
@@ -64,15 +69,85 @@
             left: 0;
             transition: all .25s;
         }
-    .contenedorDelCarrito {
-        display: flex;
-        justify-content: center;
-    }
-    .contenedorDelCarrito h3 {
-        margin-top: 10px;
-        font-size: 32px;
-        text-shadow: 3px 3px 3px rgb(255, 255, 255);
-    }
+
+    /* ESTILOS DE LAS CARD DEL CARRITO */
+        .carritoTitulo {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 32px;
+            text-shadow: 3px 3px 3px rgb(255, 255, 255);
+        }
+        .prodSeleccionados{        
+            width: 90%;
+            height: fit-content;            
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+            /* Cajitas de productos en el CARRITO*/
+            .cajitasDelCarro {
+                border-radius: 5px;
+                box-shadow: 0px 0px 30px white;
+                border-style: ridge;
+                padding: 5px;
+                width: 100%;
+                height: fit-content;
+                transition: background-color .5s;
+                display: grid;
+                grid-template-columns: 4fr 2fr 1fr;
+            }
+            .cajitasDelCarro:hover {
+                background-color: violet;
+            }
+                .modeloEnCarro {
+                    grid-column: 1;
+                    font-size: 22px;
+                }
+                .descripcionEnCarro {
+                    grid-column: 1;
+                    font-size: 16px;
+                }
+                .precioEnCarro {
+                    grid-column: 2;
+                    justify-self: flex-end;
+                    color: rgb(55, 25, 83);
+                    font-size: 20px;
+                    font-weight: 800;
+                    font-family:Verdana, Geneva, Tahoma, sans-serif;
+                    transform: translate(0px, -10px);
+                }
+                .cancelar {
+                    width: fit-content;
+                    height: fit-content;
+                    grid-column: 3;
+                    justify-self: flex-end;
+                    margin-right: 5px;
+                    transform: translate(0px, -10px);
+                }
+        .precioFinal {
+            font-size: 28px;
+            font-weight:500;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: rgb(55, 25, 83) 15px double;
+            text-shadow: 0px 0px 5px white;
+        }
+        .compraFinal {
+            margin-top: 18px;
+            margin-bottom: 25px;
+            font-size: 28px;
+            padding: 5px;
+            box-shadow: 2px 2px 5px black;
+            border-radius: 6px;
+            transition: background .6s, transform .6s;
+        }
+        .compraFinal:hover {
+            cursor: pointer;
+            background-color: violet;
+            transform: scale(1.1);
+        }
+
+
 
 /* CUERPO DE PÁGINA */
 .main {
