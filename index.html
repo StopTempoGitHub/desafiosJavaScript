@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
+    <title>Gette Fernando - Proyecto Final</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Interactuar con HTML</title>
 </head>
-
-<body class="body">
+<body>
     <!-- ENCABEZADO -->
     <header class="encabezado">
         <picture class="logo">
@@ -19,108 +17,40 @@
         <div class="nav-carrito">
             <input type="checkbox"  id="check">
             <label for="check" class="checkbtn">
-                <i class="carrito"><img src="./assets/multimedia/imagenes/iconos/carritoDeCompras.png" alt="Carrito de Compras"></i>
+                <i class="carrito"><img src="./assets/multimedia/imagenes/iconos/carritoDeCompras.png" alt="Carrito de Compras"><span id="contadorCarrito">0</span></i>
             </label>
             <div class="contenedorDelCarrito">
                 <h2 class="carritoTitulo">Carrito de Compra</h3>
-                <div class="prodSeleccionados"><!--ACÁ VAN LOS PRODUCTOS DESDE EL JS el div "cajitasDelCarro" es el que tenes que crear por DOM-->
+                <div id="carrito-contenedor" class="prodSeleccionados"><!--ACÁ VAN LOS PRODUCTOS DESDE EL JS el div "cajitasDelCarro" es el que tenes que crear por DOM-->
                     <!-- <div class="cajitasDelCarro">
                         <h3 class="modeloEnCarro">Nikon D7500</h3>
                         <p class="descripcionEnCarro">Descripcion de la camara</p>
                         <p class="precioEnCarro">$124214</p>
                         <i class="cancelar"><img src="./assets/multimedia/imagenes/iconos/cancelar.png" alt="Cancel"></i>
                     </div>
-                    <div class="cajitasDelCarro">
-                        <h3 class="modeloEnCarro">Nikon D7500</h3>
-                        <p class="descripcionEnCarro">Descripcion de la camara</p>
-                        <p class="precioEnCarro">$124214</p>
-                        <i class="cancelar"><img src="./assets/multimedia/imagenes/iconos/cancelar.png" alt="Cancel"></i>
-                    </div> -->
-
+                     -->
                 </div>
-                <p class="precioFinal">Precio Final: $0</p>
+                <p class="precioFinal">Precio Final: $<span id="precioTotal">0</span></p>
                 <button class="compraFinal">Comprar</button>
-            </div class="contenedorDelCarrito">
+                <button id="vaciar-carrito" class="compraFinal">Vaciar</button>
+            </div>
         </div>
         <!-- FIN carrito -->
     </header>
 
     <!-- CUERPO -->
     <main class="main">
-        <picture class="fondoCuerpo">
-            <img src="./assets/multimedia/imagenes/otros/fondoLente.jpg" alt="Imagen de un lente">
-        </picture>
-        <h1 class="titulo" id="title">Productos StopTempo</h1>
-        <p class="parrafo">¡Compra al mejor precio!</p>
-        <div class="contenedor">
-            <h2 class="camTitulo">Cámaras</h2>
-            <div class="contenedorCajitasCam">
-                <!--Acá se agregan elementos del JS-->
-                <!-- <div class="cajitaCams">
-                    <img class="img" src="./assets/multimedia/imagenes/camaras/d3500.png" alt="d3500">
-                    <h3 class="modelo">Nikon D3500</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div>
-                <div class="cajitaCams">
-                    <img class="img" src="./assets/multimedia/imagenes/camaras/d7500.png" alt="d3500">
-                    <h3 class="modelo">Nikon D7500</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div>
-                <div class="cajitaCams">
-                    <img class="img" src="./assets/multimedia/imagenes/camaras/d780.png" alt="d780">
-                    <h3 class="modelo">Nikon D780</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div>
-                <div class="cajitaCams">
-                    <img class="img" src="./assets/multimedia/imagenes/camaras/d850.png" alt="d850">
-                    <h3 class="modelo">Nikon D850</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div> -->
-            </div>
-        </div>
-        <div class="contenedor">
-            <h2 class="objTitulo">Objetivos</h2>
-            <div class="contenedorCajitasObj">
-                <!--Acá se agregan elementos del JS-->
-                <!-- <div class="cajitaObjs">
-                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor50.png" alt="Af Nikkor 50mm">
-                    <h3 class="modelo">Nikkor 50mm</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div>
-                <div class="cajitaObjs">
-                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor2485.png" alt="Af Nikkor 24-85mm">
-                    <h3 class="modelo">Af Nikkor 24-85mm</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div>
-                <div class="cajitaObjs">
-                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor85.png" alt="Af Nikkor 85mm">
-                    <h3 class="modelo">Nikkor 85mm</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div>
-                <div class="cajitaObjs">
-                    <img class="img" src="./assets/multimedia/imagenes/objetivos/afNikkor70200.png" alt="Af Nikkor 70-200mm">
-                    <h3 class="modelo">Af Nikkor 70-200mm</h3>
-                    <p class="descripcionCam">Descripcion de la camara</p>
-                </div> -->
-            </div>
+        <div class="container" id="contenedor-productos">    
         </div>
     </main>
 
-    <!-- PIE -->
-    <footer class="pie">
-        <div class="licencia">
-            <div class="textCreativeCommons">
-                <br/>Esta página de <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Gette Fernando</span> está bajo una 
-                <a class="linkCreativeCommons" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons     Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
-            </div>
-        </div>
-    </footer>
-    <!-- JavaScript -->
-    <script src="./assets/js/clases/objetos.js"></script>
+    <script src="./assets/js/stock.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
 
+
 <!-- COMENTARIOS A TUTORÍA -->
-<!-- Para este desafío no me sentí tan perdido a la hora de realizarlo. Pude mas o menos entender el funcionamiento o tipos de relación que hay que efectuar para hacer que el código se comunique entre sí (claro que con mucho esfuerzo por comprender). Sigo teniendo grandes dificultades para hacer relaciones mas complejas. Pero para este tipo de relaciones básicas sin el uso de demasiadas funciones, puedo superficialmente entender un poco del código. -->
+<!-- 
+    - Terminamos de crear el carrito de compras con un diseño de página a pulir en las próximas instancias.
+ -->

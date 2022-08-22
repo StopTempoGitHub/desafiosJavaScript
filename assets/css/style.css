@@ -1,7 +1,8 @@
-/* Reseteo Básico */
-* {
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* ENCABEZADO DE PÁGINA */
@@ -150,146 +151,38 @@
 
 
 /* CUERPO DE PÁGINA */
+
+
 .main {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    overflow-x: hidden;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto;
+    grid-row: repeat(auto-fit, minmax(250px, 1fr));
 }
-    .fondoCuerpo {
-        height: 470px;
-        overflow: hidden;
-    }
-        .fondoCuerpo img {
-            width: 100%;
-            transform: translateY(-388px);
-        }
-    .titulo {
-        margin-top: 5px;
-        text-shadow: 3px 3px 3px rgb(161, 161, 161);
-        font-size: 72px;
-    }
-    .parrafo {
-        margin-top: 5px;
-        font-size: 38px;
-    }
-
-
-    /* MARCA DE RETROCESO SI ALGO SE ROMPE */
-/* Creamos los contenedores para las cámaras y objetivos */
-.contenedor {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-    align-items: center;
-    align-self: center;
-}
-    /* Titulos */
-    .camTitulo, .objTitulo {
-        width: fit-content;
-        box-shadow: 2px 2px 10px rgba(95, 9, 95, 0.877);;
-        border-radius: 4px;
-        font-size: 28px;
-        padding: 5px;
-        margin-bottom: 20px;
-        transition: transform .2s;
-        cursor: pointer
-    }
-    .camTitulo:hover, .objTitulo:hover {
-        transform: scale(1.1);
-    }
-    /* Contenedor de las cajitas de productos */
-    .contenedorCajitasCam, .contenedorCajitasObj{
-        display: none;
-    }
-    .mostrarElementos {
-        width: 90vw;
+    .container {
+        justify-self: center;
+        width: 95%; 
         display: grid;
+        padding: 20px;
         gap: 30px;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    
     }
-        /* Cajitas de productos */
-        .cajitaCams, .cajitaObjs {
+        .producto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             border: rgb(116, 19, 116) 5px inset;
-            justify-self: center;
+            padding: 15px;
             width: fit-content;
             height: fit-content;
-            box-shadow: 10px 15px 20px black;
+            box-shadow: 5px 8px 12px gray;
             margin-bottom: 30px;
-            transition: background-color .5s;
         }
-        .cajitaCams:hover, .cajitaObjs:hover {
-            background-color: violet;
-            cursor: pointer;
-        }
-            .img {
-                width: 200px;
+            .imgProd {
+                width: 100px;
             }
-            .modelo {
-                font-size: 24px;
-            }
-            .precio {
-                color: rgb(55, 25, 83);
-                font-size: 24px;
-                font-weight: 800;
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                margin-bottom: 8px;
-            }
-            .btnComprar {
-                background-color: blueviolet; /* Green */
-                text-shadow: 3px 3px 5px black;
-                width: fit-content;
-                border-radius: 5px;
-                box-shadow: 2px 2px 7px black;
-                color: white;
-                padding: 10px 20px;
+            .descProd {
                 text-align: center;
-                display: inline-block;
-                margin-bottom: 10px;
-                font-size: 22px;
-                text-decoration: none;
-                transition: filter 1s, transform  .5s;
             }
-            .btnComprar:hover {
-                filter: brightness(1.50);
-                transform: scale(1.1);
-            }
-
-
-/* PRUEBA */
-.contenedorPrueba {
-    width: 70vw;
-    height: 30vh;
-    border: solid red 2px;
-    align-self: center;
-}
-
-/* PIE DE PÁGINA */
-.pie {
-    margin-top: 50px;
-    /* Degradado */
-        background: rgb(203,65,164);
-        background: -moz-linear-gradient(342deg, rgba(203,65,164,1) 0%, rgba(169,118,197,1) 47%, rgba(118,153,229,1) 100%);
-        background: -webkit-linear-gradient(342deg, rgba(203,65,164,1) 0%, rgba(169,118,197,1) 47%, rgba(118,153,229,1) 100%);
-        background: linear-gradient(342deg, rgba(203,65,164,1) 0%, rgba(169,118,197,1) 47%, rgba(118,153,229,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cb41a4",endColorstr="#7699e5",GradientType=1);
-    /* Fin degradado */
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    height: 150px;
-    width: auto;
-}
-    .licencia {
-        font-size: 20px;
-        grid-row: 2;
-        margin-bottom: 5px;
-        display: flex;
-        flex-direction: column;
-        margin-right: 15px;
-        justify-self: flex-end;
-    }
-        .linkCreativeCommons {
-            color: antiquewhite;
-        }
+    
