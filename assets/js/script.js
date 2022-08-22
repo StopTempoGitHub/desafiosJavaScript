@@ -24,21 +24,24 @@ botonVaciar.addEventListener('click', () => {
 //MOSTRAMOS LOS PRODUCTOS EN LA PÁGINA
 //recorro el arrai del stock
 stockProductos.forEach((producto) => {
+
+    const {imagen, nombre, descripcion, precio, id} = producto; //DESESTRUCTURACION
+
     const div = document.createElement('div'); //Creo un div por cada producto
     div.classList.add('producto'); //agrego la clase producto al nuevo div
     div.innerHTML = `
-    <img class="imgProd" src=${producto.imagen} alt="">
-    <h3>${producto.nombre}</h3>
-    <p class="descProd">${producto.descripcion}</p>
-    <p class="precioProducto">$ ${producto.precio}</p>
-    <button id="agregar${producto.id}" class="boton-agregar">Comprar</button>
+    <img class="imgProd" src=${imagen} alt="">
+    <h3>${nombre}</h3>
+    <p class="descProd">${descripcion}</p>
+    <p class="precioProducto">$ ${precio}</p>
+    <button id="agregar${id}" class="boton-agregar">Comprar</button>
     ` //contenido html del div
 
     contenedorProductos.appendChild(div);
-    const boton = document.getElementById(`agregar${producto.id}`); //llamo al botón del html. Es importante tomar el ID mediante acentos graves alt+96.
+    const boton = document.getElementById(`agregar${id}`); //llamo al botón del html. Es importante tomar el ID mediante acentos graves alt+96.
 
     boton.addEventListener('click', () => {
-        agregarAlCarrito(producto.id)
+        agregarAlCarrito(id)
     });
 });
 
@@ -62,13 +65,16 @@ const actualizarCarrito = () =>{
     contenedorCarrito.innerHTML = ""; //Con esto indico qué cada vez que llamo a la funcion, lo primero que hago es borrar el contenido del nodo.
 
     carrito.forEach((prod) => {
+
+        const {nombre, precio, id} = prod;
+
         const div = document.createElement('div');
         div.className = ('productoEnCarrito cajitasDelCarro')
         div.innerHTML = `
-        <h3 class="modeloEnCarro">${prod.nombre}</h3>
+        <h3 class="modeloEnCarro">${nombre}</h3>
         <p class="descripcionEnCarro">Descripcion de la camara</p>
-        <p class="precioEnCarro">$ ${prod.precio}</p>
-        <button onclick = "eliminarDelCarrito(${prod.id})" class="boton-eliminar><i class="cancelar"><img src="./assets/multimedia/imagenes/iconos/cancelar.png" alt="Cancel"></i></button>
+        <p class="precioEnCarro">$ ${precio}</p>
+        <button onclick = "eliminarDelCarrito(${id})" class="boton-eliminar><i class="cancelar"><img src="./assets/multimedia/imagenes/iconos/cancelar.png" alt="Cancel"></i></button>
         `
         contenedorCarrito.appendChild(div);
 
