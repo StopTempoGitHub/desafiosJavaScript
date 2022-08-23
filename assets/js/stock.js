@@ -40,5 +40,19 @@ let stockProductos = [
         "precio": 322000,
         "descripcion": "Versátil lente que cubre perspectivas desde gran angular hasta telefoto medio, lo que lo hace un magnífico lente multipropósito para fotografías y videos en HD.",
         "imagen": "./assets/multimedia/imagenes/objetivos/afNikkor2485.png"
+    },
+    {
+        "id": 7,
+        "nombre": "AF-S NIKKOR 85mm f/1.8G",
+        "precio": 444000,
+        "descripcion": "Este lente para retratos telefoto medio es excelente para el estudio, el set o para capturar imágenes con la luz disponible y producir fotografías y videos en HD de personas con atractivos tonos de piel y un magnífico difuminado de fondo.",
+        "imagen": "./assets/multimedia/imagenes/objetivos/afNikkor85.png"
+    },
+    {
+        "id": 8,
+        "nombre": "AF-S NIKKOR 70-200mm f/4G ED VR",
+        "precio": 902380,
+        "descripcion": "Optimizado para capturar fotografías y videos en HD de alta calidad en cámaras tanto de formato FX como DX, este objetivo incorpora los últimos avances de Nikon en tecnología de lentes y diseño óptico.",
+        "imagen": "./assets/multimedia/imagenes/objetivos/afNikkor70200.png"
     }
   ]

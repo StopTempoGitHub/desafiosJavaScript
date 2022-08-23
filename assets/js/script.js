@@ -3,10 +3,10 @@ const contenedorCarrito = document.getElementById('carrito-contenedor');
 const botonVaciar = document.getElementById('vaciar-carrito');
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
-
-
+const comprarCarrito = document.getElementById('comprarCarrito');
 //AGREGAMOS LOS PRODUCTOS AL CARRITO
 let carrito = []; //array que empieza vacío
+
 
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')){
@@ -38,7 +38,17 @@ stockProductos.forEach((producto) => {
     const boton = document.getElementById(`agregar${producto.id}`); //llamo al botón del html. Es importante tomar el ID mediante acentos graves alt+96.
 
     boton.addEventListener('click', () => {
-        agregarAlCarrito(producto.id)
+        agregarAlCarrito(producto.id);
+        //Notificacion
+        Toastify({
+            text: "Se ha añadido "+producto.nombre,
+            className: "info",
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            style: {
+              background: "linear-gradient(to right, rgba(203,65,164,1), rgba(118,153,229,1))",
+            }
+          }).showToast();
     });
 });
 
@@ -66,9 +76,9 @@ const actualizarCarrito = () =>{
         div.className = ('productoEnCarrito cajitasDelCarro')
         div.innerHTML = `
         <h3 class="modeloEnCarro">${prod.nombre}</h3>
-        <p class="descripcionEnCarro">Descripcion de la camara</p>
+        <p class="descripcionEnCarro">${prod.descripcion}</p>
         <p class="precioEnCarro">$ ${prod.precio}</p>
-        <button onclick = "eliminarDelCarrito(${prod.id})" class="boton-eliminar><i class="cancelar"><img src="./assets/multimedia/imagenes/iconos/cancelar.png" alt="Cancel"></i></button>
+        <button onclick = "eliminarDelCarrito(${prod.id})" class="boton-eliminar"><img src="./assets/multimedia/imagenes/iconos/cancelar.png" alt="Cancel"></button>
         `
         contenedorCarrito.appendChild(div);
 
@@ -78,3 +88,12 @@ const actualizarCarrito = () =>{
     contadorCarrito.innerText = carrito.length; //con este código actualiza el contador del carrito.
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0);
 };
+
+
+//SWEET ALERT
+comprarCarrito.addEventListener('click', ()=>{
+    swal({
+        title: "¡Felicitaciones!",
+        text: "Has realizado tu compra con éxito"
+      });
+});

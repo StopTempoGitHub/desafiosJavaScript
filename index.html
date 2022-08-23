@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gette Fernando - Proyecto Final</title>
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -17,7 +20,7 @@
         <div class="nav-carrito">
             <input type="checkbox"  id="check">
             <label for="check" class="checkbtn">
-                <i class="carrito"><img src="./assets/multimedia/imagenes/iconos/carritoDeCompras.png" alt="Carrito de Compras"><span id="contadorCarrito">0</span></i>
+                <picture class="carrito"><span id="contadorCarrito">0</span><img src="./assets/multimedia/imagenes/iconos/carritoDeCompras.png" alt="Carrito de Compras"></picture>
             </label>
             <div class="contenedorDelCarrito">
                 <h2 class="carritoTitulo">Carrito de Compra</h3>
@@ -31,8 +34,8 @@
                      -->
                 </div>
                 <p class="precioFinal">Precio Final: $<span id="precioTotal">0</span></p>
-                <button class="compraFinal">Comprar</button>
-                <button id="vaciar-carrito" class="compraFinal">Vaciar</button>
+                <button class="compraFinal" id="comprarCarrito">Comprar</button>
+                <button id="vaciar-carrito" class="vaciarCarrito">Vaciar</button>
             </div>
         </div>
         <!-- FIN carrito -->
@@ -40,10 +43,18 @@
 
     <!-- CUERPO -->
     <main class="main">
+        <picture class="fondoCuerpo">
+            <img src="./assets/multimedia/imagenes/otros/fondoLente.jpg" alt="Imagen de un lente">
+        </picture>
+        <h1 class="tituloMain" id="title">Productos StopTempo</h1>
         <div class="container" id="contenedor-productos">    
         </div>
     </main>
 
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> 
+    <!-- SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./assets/js/stock.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
@@ -53,4 +64,6 @@
 <!-- COMENTARIOS A TUTORÍA -->
 <!-- 
     - Terminamos de crear el carrito de compras con un diseño de página a pulir en las próximas instancias.
+    - Incorporamos librerías al proyecto final.
+        -Incorporamos SweetAlert 
  -->
